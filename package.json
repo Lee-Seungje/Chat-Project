@@ -19,5 +19,8 @@
     "bugs": {
         "url": "https://github.com/Lee-Seungje/Chat-Project/issues"
     },
-    "homepage": "https://github.com/Lee-Seungje/Chat-Project#readme"
+    "homepage": "https://github.com/Lee-Seungje/Chat-Project#readme",
+    "dependencies": {
+        "@emotion/react": "^11.10.5"
+    }
 }
