@@ -1,2 +1,3 @@
-export { default as Room } from './enter';
-export { default as Enter } from './room';
+export { default as Room } from './room';
+export { default as Enter } from './enter';
+export { default as Header } from './style';

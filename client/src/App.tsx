@@ -1,12 +1,15 @@
 import React from 'react';
 import './global.css';
 import * as C from './components';
+import { useState } from 'react';
 
 function App() {
+    const isEntered = useState(true);
+
     return (
         <div className="App">
-            <C.Enter></C.Enter>
-            <C.Room></C.Room>
+            <C.Header>KEY BA</C.Header>
+            {isEntered ? <C.Enter></C.Enter> : <C.Room></C.Room>}
         </div>
     );
 }

@@ -6,10 +6,21 @@ const Room = () => {
     return (
         <div>
             <h3></h3>
-            <S.Ul></S.Ul>
+            <S.ChatArea>
+                <S.Ul>{}</S.Ul>
+            </S.ChatArea>
             <S.Form>
-                <S.Input text="닉네임 입력."></S.Input>
-                <S.Button>전송</S.Button>
+                <div
+                    style={{
+                        display: 'flex',
+                        flexDirection: 'column',
+                        height: '200px',
+                        justifyContent: 'space-around',
+                    }}
+                >
+                    <S.Input text=""></S.Input>
+                    <S.Button>전송</S.Button>
+                </div>
             </S.Form>
         </div>
     );

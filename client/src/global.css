@@ -6,16 +6,32 @@
     font-style: normal;
 }
 body,
-html {
+html,
+#root {
+    overflow: hidden;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: 'PuradakGentleGothicR';
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('https://media.licdn.com/dms/image/C5612AQGpYu4K-fBhNQ/article-cover_image-shrink_600_2000/0/1587011267304?e=2147483647&v=beta&t=6FjaWHFAG8qnR9FYRO-e9LmJ8Q4OQqYw06ndko5piJM');
 }
 
-button {
+.App {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+button,
+input {
     font-family: 'PuradakGentleGothicR';
 }
 input::placeholder {
