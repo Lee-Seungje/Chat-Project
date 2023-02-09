@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { io } from 'socket.io-client';
 
 function App() {
-    const [isEntered, setIsEntered] = useState<boolean>(false);
+    const [isEntered, setIsEntered] = useState<boolean>(true);
     const [RM, setRM] = useState<string>('');
 
     const socket = io();

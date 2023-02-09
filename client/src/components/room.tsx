@@ -43,50 +43,7 @@ const Room = ({ socket, RM }: { socket: any; RM: string }) => {
                 {title}
             </h3>
             <S.ChatArea className="ChatArea">
-                <S.Ul className="Ul">
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li>
-                        d <li>d</li> <li>d</li> <li>d</li>
-                    </li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                </S.Ul>
+                <S.Ul className="Ul">{}</S.Ul>
             </S.ChatArea>
             <S.Form onSubmit={handleMessageSubmit}>
                 <div
