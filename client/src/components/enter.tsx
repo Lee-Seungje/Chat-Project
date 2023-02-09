@@ -1,11 +1,37 @@
 /** @jsxImportSource @emotion/react */
 import { css } from '@emotion/react';
+import { useState } from 'react';
 import * as S from './style';
 
-const Enter = () => {
+const Enter = ({
+    socket,
+    setIsEntered,
+    setRM,
+}: {
+    socket: any;
+    setIsEntered: any;
+    setRM: any;
+}) => {
+    const [roomName, setRoomName] = useState<string>('');
+    const [nickName, setNickName] = useState<string>('');
+
+    const showRoom = () => {
+        setIsEntered(false);
+    };
+
+    const handleSubmit = (event: React.FormEvent<Element>) => {
+        event.preventDefault();
+        console.log(roomName, nickName);
+        socket.emit('nickname', nickName);
+        setNickName('');
+
+        socket.emit('enter_room', roomName, showRoom);
+        setRM(roomName);
+        setRoomName('');
+    };
     return (
         <div>
-            <S.Form>
+            <S.Form onSubmit={handleSubmit}>
                 <div
                     style={{
                         display: 'flex',
@@ -14,8 +40,26 @@ const Enter = () => {
                         height: '300px',
                     }}
                 >
-                    <S.Input text="방 이름 입력."></S.Input>
-                    <S.Input text="닉네임 입력."></S.Input>
+                    <S.Input
+                        required
+                        value={roomName}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setRoomName(event.target.value);
+                        }}
+                        placeholder="방 이름 입력."
+                    ></S.Input>
+                    <S.Input
+                        required
+                        placeholder="닉네임 입력."
+                        value={nickName}
+                        onChange={(
+                            event: React.ChangeEvent<HTMLInputElement>
+                        ) => {
+                            setNickName(event.target.value);
+                        }}
+                    ></S.Input>
                     <S.Button>입장</S.Button>
                 </div>
             </S.Form>

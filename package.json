@@ -21,6 +21,7 @@
     },
     "homepage": "https://github.com/Lee-Seungje/Chat-Project#readme",
     "dependencies": {
-        "@emotion/react": "^11.10.5"
+        "@emotion/react": "^11.10.5",
+        "react-hook-form": "^7.43.1"
     }
 }

@@ -9,7 +9,7 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.static('build'));
 
-app.get('/', function (req, res) {
+app.get('/', function (req: any, res: any) {
     res.sendFile(__dirname + '/build/index.html');
 });
 
