@@ -30,10 +30,27 @@ html,
     justify-content: space-around;
 }
 
+li {
+    font-family: 'PuradakGentleGothicR';
+    margin-top: 5px;
+}
+
 button,
 input {
     font-family: 'PuradakGentleGothicR';
 }
 input::placeholder {
     font-family: 'PuradakGentleGothicR';
+}
+
+.ChatArea::-webkit-scrollbar {
+    background: linear-gradient(to right, white, rgb(58, 52, 50));
+    border-radius: 0px 10px 10px 0;
+}
+
+.ChatArea::-webkit-scrollbar-thumb {
+    background-color: white;
+    border-radius: 20px;
+    background-clip: padding-box;
+    border: 5px solid transparent;
 }

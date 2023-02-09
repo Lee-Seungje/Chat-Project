@@ -55,6 +55,7 @@ export const Button = styled.button({
 export const Ul = styled.ul({
     listStyle: 'none',
     display: 'flex',
+    flexDirection: 'column',
 });
 
 export const ChatArea = styled.div({
@@ -62,6 +63,7 @@ export const ChatArea = styled.div({
     height: '400px',
     backgroundColor: '#FFF',
     borderRadius: '10px',
+    overflow: 'auto',
 });
 
 export default Header;

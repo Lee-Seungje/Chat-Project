@@ -16,6 +16,10 @@ const Room = ({ socket, RM }: { socket: any; RM: string }) => {
         const li = document.createElement('li');
         Ul?.appendChild(li);
         li.innerText = message;
+        const ChatArea = document.querySelector('.ChatArea');
+        ChatArea != null
+            ? (ChatArea.scrollTop = ChatArea.scrollHeight)
+            : console.log('');
     };
 
     const handleMessageSubmit = (event: React.FormEvent<Element>) => {
@@ -38,8 +42,51 @@ const Room = ({ socket, RM }: { socket: any; RM: string }) => {
             >
                 {title}
             </h3>
-            <S.ChatArea>
-                <S.Ul className="Ul">{}</S.Ul>
+            <S.ChatArea className="ChatArea">
+                <S.Ul className="Ul">
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li>
+                        d <li>d</li> <li>d</li> <li>d</li>
+                    </li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </S.Ul>
             </S.ChatArea>
             <S.Form onSubmit={handleMessageSubmit}>
                 <div
