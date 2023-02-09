@@ -100,6 +100,8 @@ export const ChatArea = ({ children }: { children: any }) => {
             css={{
                 width: '1000px',
                 height: '400px',
+                backgroundColor: '#FFF',
+                borderRadius: '10px',
             }}
         >
             {children}

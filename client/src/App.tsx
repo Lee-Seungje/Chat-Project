@@ -4,7 +4,7 @@ import * as C from './components';
 import { useState } from 'react';
 
 function App() {
-    const isEntered = useState(true);
+    const [isEntered, setIsEntered] = useState(false);
 
     return (
         <div className="App">

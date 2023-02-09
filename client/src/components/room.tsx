@@ -18,7 +18,7 @@ const Room = () => {
                         justifyContent: 'space-around',
                     }}
                 >
-                    <S.Input text=""></S.Input>
+                    <S.Input text="메세지 입력."></S.Input>
                     <S.Button>전송</S.Button>
                 </div>
             </S.Form>
