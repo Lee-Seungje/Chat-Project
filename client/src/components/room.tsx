@@ -1,8 +1,6 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import React from 'react';
 import { useEffect, useState } from 'react';
-import ReactDOM from 'react-dom';
 import * as S from './style';
 
 const Room = ({
@@ -23,8 +21,6 @@ const Room = ({
 
     const addMessage = (message: string) => {
         let Ul = document.querySelector('.Ul');
-        // const msgLi = <li>{message}</li>;
-        // const newLi = React.createElement('h1', null, message);
         const li = document.createElement('li');
         Ul?.appendChild(li);
         li.innerText = message;
@@ -43,28 +39,29 @@ const Room = ({
     };
 
     socket.on('welcome', (user: any, newCount: any) => {
+        console.log('이거 왜 안되냐');
         setRM(`${RM} (${newCount})`);
         addMessage(user + '가 출전했다!');
     });
 
-    socket.on('room_change', (rooms: any) => {
-        setRoomList([]);
-        if (rooms.length === 0) {
-            return;
-        }
-        rooms.forEach((room: any) => {
-            const li = document.createElement('li');
-            li.innerText = room;
-            setRoomList(roomList + li);
-        });
-    });
+    // socket.on('room_change', (rooms: any) => {
+    //     setRoomList([]);
+    //     if (rooms.length === 0) {
+    //         return;
+    //     }
+    //     rooms.forEach((room: any) => {
+    //         const li = document.createElement('li');
+    //         li.innerText = room;
+    //         setRoomList(roomList + li);
+    //     });
+    // });
 
-    socket.on('bye', (left: any, newCount: any) => {
-        setRM(`${RM} (${newCount})`);
-        addMessage(left + '가 도망갔다!');
-    });
+    // socket.on('bye', (left: any, newCount: any) => {
+    //     setRM(`${RM} (${newCount})`);
+    //     addMessage(left + '가 도망갔다!');
+    // });
 
-    socket.on('new_message', addMessage);
+    // socket.on('new_message', addMessage);
 
     useEffect(() => {
         setTitle(`Room ${RM}`);

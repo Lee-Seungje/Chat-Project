@@ -1,13 +1,12 @@
 /** @jsxImportSource @emotion/react */
-import { css } from '@emotion/react';
 import { useState } from 'react';
 import * as S from './style';
 
 const Enter = ({
-    socket,
     setIsEntered,
     setRM,
     roomList,
+    socket,
 }: {
     socket: any;
     setIsEntered: any;

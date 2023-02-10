@@ -46,6 +46,7 @@ const countRoom = (roomName: any) => {
 };
 
 wsServer.on('connection', (socket: any) => {
+    console.log('fds');
     wsServer.sockets.emit('room_change', publicRooms());
     socket['nickname'] = 'Anon';
     socket.on('enter_room', (roomName: any, done: any) => {
@@ -55,6 +56,7 @@ wsServer.on('connection', (socket: any) => {
             .to(roomName)
             .emit('welcome', socket.nickname, countRoom(roomName));
         wsServer.sockets.emit('room_change', publicRooms());
+        console.log(roomName, socket.nickname);
     });
     socket.on('disconnecting', () => {
         socket.rooms.forEach(
@@ -72,4 +74,4 @@ wsServer.on('connection', (socket: any) => {
     socket.on('nickname', (nickname: any) => (socket['nickname'] = nickname));
 });
 
-httpServer.listen(3000, handleListen);
+httpServer.listen(PORT, handleListen);
