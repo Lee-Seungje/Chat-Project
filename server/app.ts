@@ -33,7 +33,7 @@ function publicRooms() {
         },
     } = wsServer;
     const publicRooms: any = [];
-    rooms.forEach((_, key) => {
+    rooms.forEach((_: any, key: any) => {
         if (sids.get(key) === undefined) {
             publicRooms.push(key);
         }
@@ -72,4 +72,4 @@ wsServer.on('connection', (socket: any) => {
     socket.on('nickname', (nickname: any) => (socket['nickname'] = nickname));
 });
 
-httpServer.listen(PORT, handleListen);
+httpServer.listen(3000, handleListen);

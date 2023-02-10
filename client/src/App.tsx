@@ -7,6 +7,7 @@ import { io } from 'socket.io-client';
 function App() {
     const [isEntered, setIsEntered] = useState<boolean>(true);
     const [RM, setRM] = useState<string>('');
+    const [roomList, setRoomList] = useState([]);
 
     const socket = io();
 
@@ -18,9 +19,16 @@ function App() {
                     socket={socket}
                     setIsEntered={setIsEntered}
                     setRM={setRM}
+                    roomList={roomList}
                 ></C.Enter>
             ) : (
-                <C.Room socket={socket} RM={RM}></C.Room>
+                <C.Room
+                    socket={socket}
+                    RM={RM}
+                    setRM={setRM}
+                    setRoomList={setRoomList}
+                    roomList={roomList}
+                ></C.Room>
             )}
         </div>
     );

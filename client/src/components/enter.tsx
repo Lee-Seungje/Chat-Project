@@ -7,10 +7,12 @@ const Enter = ({
     socket,
     setIsEntered,
     setRM,
+    roomList,
 }: {
     socket: any;
     setIsEntered: any;
     setRM: any;
+    roomList: any;
 }) => {
     const [roomName, setRoomName] = useState<string>('');
     const [nickName, setNickName] = useState<string>('');
@@ -71,7 +73,7 @@ const Enter = ({
             >
                 입장 가능한 전장
             </h3>
-            <S.Ul>{}</S.Ul>
+            <S.Ul>{roomList}</S.Ul>
         </div>
     );
 };
