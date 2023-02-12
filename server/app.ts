@@ -46,10 +46,11 @@ const countRoom = (roomName: any) => {
 };
 
 wsServer.on('connection', (socket: any) => {
-    console.log('fds');
     wsServer.sockets.emit('room_change', publicRooms());
+    let rm = '';
     socket['nickname'] = 'Anon';
     socket.on('enter_room', (roomName: any, done: any) => {
+        rm = roomName;
         socket.join(roomName);
         done();
         wsServer.sockets
@@ -71,7 +72,9 @@ wsServer.on('connection', (socket: any) => {
         socket.to(room).emit('new_message', socket.nickname + ': ' + msg);
         done();
     });
-    socket.on('nickname', (nickname: any) => (socket['nickname'] = nickname));
+    socket.on('nickname', (nickname: any) => {
+        socket['nickname'] = nickname;
+    });
 });
 
 httpServer.listen(PORT, handleListen);

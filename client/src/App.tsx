@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './global.css';
 import * as C from './components';
 import { useState } from 'react';
@@ -9,7 +9,6 @@ function App() {
     const [isEntered, setIsEntered] = useState<boolean>(true);
     const [RM, setRM] = useState<string>('');
     const [roomList, setRoomList] = useState([]);
-
     return (
         <div className="App">
             <C.Header>KEY BA</C.Header>

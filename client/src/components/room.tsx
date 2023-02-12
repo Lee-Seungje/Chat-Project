@@ -38,31 +38,40 @@ const Room = ({
         });
     };
 
-    socket.on('welcome', (user: any, newCount: any) => {
-        console.log('이거 왜 안되냐');
-        setRM(`${RM} (${newCount})`);
-        addMessage(user + '가 출전했다!');
-    });
+    useEffect(() => {
+        socket.on('welcome', (user: any, newCount: any) => {
+            console.log('이거 왜 안되냐');
+            setRM(`${RM} (${newCount})`);
+            addMessage(user + '(이)가 출전했다!');
+        });
 
-    // socket.on('room_change', (rooms: any) => {
-    //     setRoomList([]);
-    //     if (rooms.length === 0) {
-    //         return;
-    //     }
-    //     rooms.forEach((room: any) => {
-    //         const li = document.createElement('li');
-    //         li.innerText = room;
-    //         setRoomList(roomList + li);
-    //     });
-    // });
+        socket.on('test', (res: any) => {
+            console.log(res);
+        });
 
-    // socket.on('bye', (left: any, newCount: any) => {
-    //     setRM(`${RM} (${newCount})`);
-    //     addMessage(left + '가 도망갔다!');
-    // });
+        socket.on('room_change', (rooms: any) => {
+            console.log('방이 바뀜', rooms);
+            // setRoomList([]);
 
-    // socket.on('new_message', addMessage);
+            rooms.forEach((room: any) => {
+                const li = document.createElement('li');
+                li.innerText = room;
+                setRoomList(roomList + li);
+            });
+        });
+        socket.on('new_message', (msg: string) => {
+            addMessage(msg);
+        });
 
+        socket.on('bye', (left: any, newCount: any) => {
+            console.log('누가 나감');
+            setRM(`${RM} (${newCount - 1})`);
+            addMessage(left + '가 도망갔다!');
+        });
+        return () => {
+            socket.disconnect();
+        };
+    }, []);
     useEffect(() => {
         setTitle(`Room ${RM}`);
     }, []);
